@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='create_user.css') }}">
+</head>
+
+<body>
+<div class="create-user-container">
+<h1>Criar Usuário</h1>
+
+<form action="{{ url_for('create_user') }}" method="post">
+    <input type="text" name="username" placeholder="Nome do Usuário" required>
+    <input type="password" name="password" placeholder="Senha" required>
+    <button type="submit">Criar Usuário</button>
+</form>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<ul class="messages">
+{% for category, message in messages %}
+<li class="{{ category }}">{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</div>
+
+</body>
+
+</html>

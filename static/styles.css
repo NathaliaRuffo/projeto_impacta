@@ -16,118 +16,92 @@ h1 {
     margin-top: 20px;
 }
 
-/* Estilo do formulário */
-form {
+/* Container principal para os formulários */
+.form-container {
     display: flex;
+    flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
     justify-content: center;
-    gap: 10px; /* Espaçamento entre os campos */
-    margin-bottom: 20px;
+    gap: 20px; /* Espaçamento entre os formulários */
+    margin-bottom: 20px; /* Espaçamento abaixo dos formulários */
 }
 
-form input, form button {
+/* Estilo do formulário de adição de itens */
+form.add-form {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os campos */
+}
+
+form.add-form input, form.add-form button {
     padding: 10px;
     border-radius: 5px; /* Bordas arredondadas */
     border: 1px solid #ccc; /* Borda leve */
 }
 
-form input {
+form.add-form input {
     width: 200px; /* Largura dos campos de texto */
 }
 
-form button {
+form.add-form button {
     background-color: #007bff; /* Azul para o botão */
     color: white; /* Texto branco */
     border: none;
     cursor: pointer;
 }
 
-form button:hover {
+form.add-form button:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
 
-/* Estilo da lista de itens */
-ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0;
+/* Estilo do formulário de busca */
+form.search-form {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os campos */
 }
 
-li {
-    background-color: white; /* Fundo branco para os itens */
+form.search-form input {
+    padding: 10px;
     border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    margin-bottom: 15px; /* Espaçamento entre os itens */
-    padding: 15px;
+    border: 1px solid #ccc; /* Borda leve */
 }
 
-li span {
-    display: block; /* Cada linha separada */
-}
-
-/* Estilo dos links (botões) na lista */
-li a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    text-decoration: none; /* Remove sublinhado */
+form.search-form button {
+    background-color: #007bff; /* Azul para o botão */
+    color: white; /* Texto branco */
     border-radius: 5px; /* Bordas arredondadas */
+    border: none;
+    cursor: pointer;
 }
 
-li a:first-child {
-    background-color: #ffc107; /* Amarelo para atualizar */
-    color: black;
+form.search-form button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
 
-li a:first-child:hover {
-    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
-}
-
-li a:last-child {
-    background-color: #dc3545; /* Vermelho para desativar/ativar */
+.btn-create-user {
+    padding: 10px;
+    background-color: #28a745; /* Verde para criar usuário */
     color: white;
-}
-
-li a:last-child:hover {
-    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
-}
-
-/* Centralizar a lista de itens */
-h2 {
-    text-align: center;
-}
-
-/* Estilo dos links (botões) na lista */
-li a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    text-decoration: none; /* Remove sublinhado */
     border-radius: 5px; /* Bordas arredondadas */
-    color: white; /* Texto branco para todos os botões */
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Remove sublinhado */
+    margin-top: 15px; /* Espaçamento acima do botão */
 }
 
-li a:first-child {
-    background-color: #ffc107; /* Amarelo para atualizar */
-    color: black;
-}
-
-li a:first-child:hover {
-    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
-}
-
-/* Novo estilo para o botão Ativar/Desativar */
-li a.ativar {
-    background-color: #28a745; /* Verde para ativar */
-}
-
-li a.ativar:hover {
+.btn-create-user:hover {
     background-color: #218838; /* Verde mais escuro ao passar o mouse */
 }
 
-li a.desativar {
-    background-color: #dc3545; /* Vermelho para desativar */
+/* Botão de deletar todos os itens */
+.btn-delete-all {
+    padding: 10px;
+    background-color: #dc3545; /* Vermelho para deletar todos os itens */
+    color: white;
+    border-radius: 5px; /* Bordas arredondadas */
+    border: none;
+    cursor: pointer;
 }
 
-li a.desativar:hover {
+.btn-delete-all:hover {
     background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
 }
 
@@ -136,63 +110,10 @@ h2 {
     text-align: center;
 }
 
-/* Estilo da lista de itens */
-ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0;
-}
-
-li {
-    background-color: white; /* Fundo branco para os itens */
-    border-radius: 5px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    margin-bottom: 15px; /* Espaçamento entre os itens */
-    padding: 15px;
-    display: flex; /* Usar Flexbox para alinhar o conteúdo */
-    justify-content: space-between; /* Espaço entre o texto e os botões */
-    align-items: center; /* Alinha verticalmente os itens */
-}
-
-/* Estilo do texto no item */
-li .item-info {
-    flex-grow: 1; /* Faz com que o texto ocupe o espaço disponível */
-}
-
-/* Estilo dos botões na lista */
-li .item-actions {
-    display: flex;
-    gap: 10px; /* Espaçamento entre os botões */
-}
-
-li a {
-    display: inline-block;
-    padding: 8px 15px;
-    text-decoration: none; /* Remove sublinhado */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: white; /* Texto branco para todos os botões */
-}
-
-li a:first-child {
-    background-color: #ffc107; /* Amarelo para atualizar */
-    color: black;
-}
-
-li a:first-child:hover {
-    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
-}
-
-li a:last-child {
-    background-color: #dc3545; /* Vermelho para desativar/ativar */
-}
-
-li a:last-child:hover {
-    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
-}
-
-/* Estilo da tabela */
+/* Estilo da tabela de itens */
 .styled-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    margin-top: 25px;
     font-size: 1em;
     font-family: Arial, sans-serif;
     width: 100%;
@@ -202,74 +123,80 @@ li a:last-child:hover {
 
 .styled-table thead tr {
     background-color: #007bff; /* Cabeçalho azul */
-    color: #ffffff; /* Texto branco */
-    text-align: left;
+    color: #ffffff; /* Texto branco no cabeçalho */
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px; /* Espaçamento interno */
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd; /* Linha separadora */
+    padding: 12px 15px; /* Espaçamento interno das células */
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3; /* Fundo alternado */
+    background-color: #f3f3f3; /* Fundo alternado para linhas pares */
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #007bff; /* Linha final */
+    border-bottom: 2px solid #007bff; /* Linha final da tabela */
 }
 
-/* Estilo dos botões na tabela */
-.btn-update {
+/* Botões na tabela (Atualizar e Ativar/Desativar) */
+
+.styled-table a {
+    display: inline-block; /* Exibe como botão */
+    padding: 5px 10px; /* Espaçamento interno */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: white; /* Texto branco */
+}
+
+.styled-table a.btn-update {
     background-color: #ffc107; /* Amarelo para atualizar */
-    color: black;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
+    color: black; /* Texto preto */
 }
 
-.btn-update:hover {
+.styled-table a.btn-update:hover {
     background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
 }
 
-.btn-toggle {
-    background-color: #dc3545; /* Vermelho para desativar/ativar */
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
+.styled-table a.btn-ativar {
+    background-color: #28a745; /* Verde para ativar */
 }
 
-.btn-toggle:hover {
-    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
-}
-
-/* Botão para ativar (verde) */
-.btn-ativar {
-    background-color: #28a745; /* Verde */
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn-ativar:hover {
+.styled-table a.btn-ativar:hover {
     background-color: #218838; /* Verde mais escuro ao passar o mouse */
 }
 
-/* Botão para desativar (vermelho) */
-.btn-desativar {
-    background-color: #dc3545; /* Vermelho */
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
+.styled-table a.btn-desativar {
+    background-color: #dc3545; /* Vermelho para desativar */
 }
 
-.btn-desativar:hover {
+.styled-table a.btn-desativar:hover {
     background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
+}
+
+.flash-messages {
+    margin-top: 20px; /* Espaçamento acima das mensagens */
+    text-align: center; /* Centraliza as mensagens */
+}
+
+.flash-message {
+    padding: 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.flash-message.success {
+    background-color: #d4edda; /* Fundo verde claro */
+    color: #155724; /* Texto verde escuro */
+}
+
+.flash-message.warning {
+    background-color: #fff3cd; /* Fundo amarelo claro */
+    color: #856404; /* Texto amarelo escuro */
+}
+
+.flash-message.danger {
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='update_product.css') }}">
 </head>
 <body>
-    <h1>Atualizar Item</h1>
+    <h1>Atualizar Produto</h1>
     
     <form action="{{ url_for('update_item', id=item.id) }}" method="post">
         <input type="text" name="nome" value="{{ item.nome }}" required>

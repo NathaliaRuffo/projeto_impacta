@@ -1,0 +1,118 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Fundo claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da tela */
+}
+
+/* Container principal */
+.login-container {
+    background-color: white; /* Fundo branco */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    width: 100%;
+    max-width: 400px; /* Largura máxima */
+}
+
+/* Título */
+.login-container h1 {
+    text-align: center;
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px;
+}
+
+/* Estilo do formulário */
+form input {
+    width: calc(100% - 20px); /* Largura total menos o padding */
+    padding: 10px; /* Espaçamento interno nos campos */
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas nos campos */
+}
+
+form button {
+    width: 100%; /* Botão ocupa toda a largura do formulário */
+    padding: 10px;
+    background-color: #007bff; /* Azul para o botão */
+    color: white; /* Texto branco no botão */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas no botão */
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Mensagens de erro ou sucesso */
+.messages {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.messages .success {
+    background-color: #d4edda; /* Verde claro para sucesso */
+    color: #155724; /* Texto verde escuro */
+}
+
+.messages .danger {
+    background-color: #f8d7da; /* Vermelho claro para erro */
+    color: #721c24; /* Texto vermelho escuro */
+}
+
+.messages .warning {
+    background-color: #fff3cd; /* Amarelo claro para aviso */
+    color: #856404; /* Texto amarelo escuro */
+}
+
+.btn-create-user {
+    padding: 10px;
+    background-color: #28a745; /* Verde para criar usuário */
+    color: white;
+    border-radius: 5px; /* Bordas arredondadas */
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Remove sublinhado */
+    margin-top: 15px; /* Adiciona espaçamento acima do botão */
+    display: inline-block; /* Garante que o botão seja exibido corretamente */
+}
+
+.btn-create-user:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+.flash-messages {
+    margin-top: 20px; /* Espaçamento acima das mensagens */
+    text-align: center; /* Centraliza as mensagens */
+}
+
+.flash-message {
+    padding: 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.flash-message.success {
+    background-color: #d4edda; /* Fundo verde claro */
+    color: #155724; /* Texto verde escuro */
+}
+
+.flash-message.danger {
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+}
+
+
