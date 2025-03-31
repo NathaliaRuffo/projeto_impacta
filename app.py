@@ -52,7 +52,7 @@ def home():
 @app.route('/index')
 @login_required
 def index():
-    items = Item.query.all()  # Carrega todos os produtos
+    items = Item.query.all()
     return render_template('index.html', items=items)
 
 @app.route('/add', methods=['POST'])
@@ -109,10 +109,11 @@ def search_item():
     query = request.args.get('query')
     if query:
         items = Item.query.filter(Item.nome.ilike(f"%{query}%")).all()
-        if not items:  # Se nenhum produto for encontrado
+        if not items:  # Se não houver resultados
             flash('Produto não encontrado.', 'danger')
             return redirect(url_for('index'))  # Redireciona para /index
     else:
+        items = Item.query.all()
         flash("Nenhum termo de busca foi inserido.", 'warning')
         return redirect(url_for('index'))  # Redireciona para /index
     
@@ -127,6 +128,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and user.password == password:
             session['user_id'] = user.id
+            flash('Login realizado com sucesso!', 'success')
             return redirect(url_for('index'))
         else:
             flash('Usuário ou senha inválidos!', 'danger')

@@ -16,16 +16,16 @@ h1 {
     margin-top: 20px;
 }
 
-/* Container principal para os formulários */
+/* Container principal para os formulários e botões */
 .form-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
-    justify-content: center;
-    gap: 20px; /* Espaçamento entre os formulários */
-    margin-bottom: 20px; /* Espaçamento abaixo dos formulários */
+    gap: 10px; /* Espaçamento entre os elementos */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo do contêiner */
 }
 
-/* Estilo do formulário de adição de itens */
+/* Estilo do formulário de adição */
 form.add-form {
     display: flex;
     gap: 10px; /* Espaçamento entre os campos */
@@ -38,7 +38,7 @@ form.add-form input, form.add-form button {
 }
 
 form.add-form input {
-    width: 200px; /* Largura dos campos de texto */
+    width: 150px; /* Ajuste a largura dos campos */
 }
 
 form.add-form button {
@@ -55,13 +55,13 @@ form.add-form button:hover {
 /* Estilo do formulário de busca */
 form.search-form {
     display: flex;
-    gap: 10px; /* Espaçamento entre os campos */
 }
 
 form.search-form input {
     padding: 10px;
     border-radius: 5px; /* Bordas arredondadas */
     border: 1px solid #ccc; /* Borda leve */
+    width: 150px; /* Ajuste a largura do campo */
 }
 
 form.search-form button {
@@ -69,39 +69,62 @@ form.search-form button {
     color: white; /* Texto branco */
     border-radius: 5px; /* Bordas arredondadas */
     border: none;
-    cursor: pointer;
 }
 
-form.search-form button:hover {
-    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
-}
-
+/* Botão Criar Usuário */
 .btn-create-user {
     padding: 10px;
     background-color: #28a745; /* Verde para criar usuário */
     color: white;
     border-radius: 5px; /* Bordas arredondadas */
-    border: none;
-    cursor: pointer;
-    text-decoration: none; /* Remove sublinhado */
-    margin-top: 15px; /* Espaçamento acima do botão */
 }
 
 .btn-create-user:hover {
     background-color: #218838; /* Verde mais escuro ao passar o mouse */
 }
 
-/* Botão de deletar todos os itens */
-.btn-delete-all {
-    padding: 10px;
-    background-color: #dc3545; /* Vermelho para deletar todos os itens */
-    color: white;
-    border-radius: 5px; /* Bordas arredondadas */
-    border: none;
-    cursor: pointer;
+/* Estilo da lista de itens */
+ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
 }
 
-.btn-delete-all:hover {
+li {
+    background-color: white; /* Fundo branco para os itens */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-bottom: 15px; /* Espaçamento entre os itens */
+    padding: 15px;
+}
+
+li span {
+    display: block; /* Cada linha separada */
+}
+
+/* Estilo dos links (botões) na lista */
+li a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+li a:first-child {
+    background-color: #ffc107; /* Amarelo para atualizar */
+    color: black;
+}
+
+li a:first-child:hover {
+    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
+}
+
+li a:last-child {
+    background-color: #dc3545; /* Vermelho para desativar/ativar */
+    color: white;
+}
+
+li a:last-child:hover {
     background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
 }
 
@@ -110,10 +133,104 @@ h2 {
     text-align: center;
 }
 
-/* Estilo da tabela de itens */
+/* Estilo dos links (botões) na lista */
+li a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: white; /* Texto branco para todos os botões */
+}
+
+li a:first-child {
+    background-color: #ffc107; /* Amarelo para atualizar */
+    color: black;
+}
+
+li a:first-child:hover {
+    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
+}
+
+/* Novo estilo para o botão Ativar/Desativar */
+li a.ativar {
+    background-color: #28a745; /* Verde para ativar */
+}
+
+li a.ativar:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+li a.desativar {
+    background-color: #dc3545; /* Vermelho para desativar */
+}
+
+li a.desativar:hover {
+    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
+}
+
+/* Centralizar a lista de itens */
+h2 {
+    text-align: center;
+}
+
+/* Estilo da lista de itens */
+ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+}
+
+li {
+    background-color: white; /* Fundo branco para os itens */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-bottom: 15px; /* Espaçamento entre os itens */
+    padding: 15px;
+    display: flex; /* Usar Flexbox para alinhar o conteúdo */
+    justify-content: space-between; /* Espaço entre o texto e os botões */
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+/* Estilo do texto no item */
+li .item-info {
+    flex-grow: 1; /* Faz com que o texto ocupe o espaço disponível */
+}
+
+/* Estilo dos botões na lista */
+li .item-actions {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+li a {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: white; /* Texto branco para todos os botões */
+}
+
+li a:first-child {
+    background-color: #ffc107; /* Amarelo para atualizar */
+    color: black;
+}
+
+li a:first-child:hover {
+    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
+}
+
+li a:last-child {
+    background-color: #dc3545; /* Vermelho para desativar/ativar */
+}
+
+li a:last-child:hover {
+    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
+}
+
+/* Estilo da tabela */
 .styled-table {
     border-collapse: collapse;
-    margin-top: 25px;
+    margin: 25px 0;
     font-size: 1em;
     font-family: Arial, sans-serif;
     width: 100%;
@@ -123,20 +240,25 @@ h2 {
 
 .styled-table thead tr {
     background-color: #007bff; /* Cabeçalho azul */
-    color: #ffffff; /* Texto branco no cabeçalho */
+    color: #ffffff; /* Texto branco */
+    text-align: left;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px; /* Espaçamento interno das células */
+    padding: 12px 15px; /* Espaçamento interno */
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd; /* Linha separadora */
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3; /* Fundo alternado para linhas pares */
+    background-color: #f3f3f3; /* Fundo alternado */
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #007bff; /* Linha final da tabela */
+    border-bottom: 2px solid #007bff; /* Linha final */
 }
 
 /* Botões na tabela (Atualizar e Ativar/Desativar) */
@@ -146,12 +268,10 @@ h2 {
     padding: 5px 10px; /* Espaçamento interno */
     text-decoration: none; /* Remove sublinhado */
     border-radius: 5px; /* Bordas arredondadas */
-    color: white; /* Texto branco */
 }
 
 .styled-table a.btn-update {
     background-color: #ffc107; /* Amarelo para atualizar */
-    color: black; /* Texto preto */
 }
 
 .styled-table a.btn-update:hover {
@@ -174,29 +294,65 @@ h2 {
     background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
 }
 
-.flash-messages {
-    margin-top: 20px; /* Espaçamento acima das mensagens */
-    text-align: center; /* Centraliza as mensagens */
+/* Botão para ativar (verde) */
+.btn-ativar {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.flash-message {
+.btn-ativar:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Botão para desativar (vermelho) */
+.btn-desativar {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-desativar:hover {
+    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
+}
+/* Botão Atualizar Produto */
+.btn-update {
+    background-color: #ffc107; /* Amarelo para atualizar */
+    color: black; /* Texto preto */
+    padding: 5px 10px;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.btn-update:hover {
+    background-color: #e0a800; /* Amarelo mais escuro ao passar o mouse */
+    color: black; /* Garante que o texto continue preto ao passar o mouse */
+}
+/* Estilo para mensagens de erro */
+.flash-message.danger {
+    color: #721c24; /* Texto vermelho escuro */
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    border: 1px solid #f5c6cb; /* Borda vermelha clara */
     padding: 10px;
     border-radius: 5px; /* Bordas arredondadas */
-    font-size: 16px; /* Tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaçamento acima da mensagem */
+    max-width: 800px; /* Largura máxima */
     font-weight: bold; /* Texto em negrito */
 }
-
+/* Estilo para mensagens de sucesso */
 .flash-message.success {
-    background-color: #d4edda; /* Fundo verde claro */
     color: #155724; /* Texto verde escuro */
-}
-
-.flash-message.warning {
-    background-color: #fff3cd; /* Fundo amarelo claro */
-    color: #856404; /* Texto amarelo escuro */
-}
-
-.flash-message.danger {
-    background-color: #f8d7da; /* Fundo vermelho claro */
-    color: #721c24; /* Texto vermelho escuro */
+    background-color: #d4edda; /* Fundo verde claro */
+    border: 1px solid #c6e2b5; /* Borda verde clara */
+    padding: 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaçamento acima da mensagem */
+    max-width: 800px; /* Largura máxima */
+    font-weight: bold; /* Texto em negrito */
 }

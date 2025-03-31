@@ -85,34 +85,9 @@ form button:hover {
     border: none;
     cursor: pointer;
     text-decoration: none; /* Remove sublinhado */
-    margin-top: 15px; /* Adiciona espaçamento acima do botão */
-    display: inline-block; /* Garante que o botão seja exibido corretamente */
+    margin-top: 15px; /* Espaçamento acima do botão */
 }
 
 .btn-create-user:hover {
     background-color: #218838; /* Verde mais escuro ao passar o mouse */
 }
-
-.flash-messages {
-    margin-top: 20px; /* Espaçamento acima das mensagens */
-    text-align: center; /* Centraliza as mensagens */
-}
-
-.flash-message {
-    padding: 10px;
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 16px; /* Tamanho do texto */
-    font-weight: bold; /* Texto em negrito */
-}
-
-.flash-message.success {
-    background-color: #d4edda; /* Fundo verde claro */
-    color: #155724; /* Texto verde escuro */
-}
-
-.flash-message.danger {
-    background-color: #f8d7da; /* Fundo vermelho claro */
-    color: #721c24; /* Texto vermelho escuro */
-}
-
-
