@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://nathalia:12345@localhost/projeto_impacta'
 app.secret_key = 'sua_chave_secreta_aqui'  # Configure uma chave secreta para sessões
 
+
 # Teste de conexão com o banco de dados
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 if not database_exists(engine.url):
@@ -34,6 +35,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False, nullable=False)
 
 # Decorador para proteger rotas que exigem login
 def login_required(f):
@@ -42,6 +44,21 @@ def login_required(f):
         if 'user_id' not in session:
             flash('Você precisa estar logado para acessar esta página.', 'warning')
             return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Decorador para proteger rotas que exigem admin
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        user_id = session.get('user_id')
+        if not user_id:
+            flash('Você precisa estar logado para acessar esta página.', 'warning')
+            return redirect(url_for('login'))
+        user = User.query.get(user_id)
+        if not user or not user.is_admin:
+            flash('Acesso restrito a administradores.', 'danger')
+            return redirect(url_for('index'))
         return f(*args, **kwargs)
     return decorated_function
 
@@ -137,10 +154,10 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
-    flash('Logout realizado com sucesso!', 'info')
     return redirect(url_for('login'))
 
 @app.route('/create_user', methods=['GET', 'POST'])
+@admin_required
 def create_user():
     if request.method == 'POST':
         username = request.form['username']
